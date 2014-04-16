@@ -21,11 +21,23 @@ import org.junit.Test;
 
 import com.io7m.jequality.AlmostEqualDouble;
 import com.io7m.jequality.AlmostEqualDouble.ContextRelative;
+import com.io7m.jequality.validator.AnnotationRequirement;
+import com.io7m.jequality.validator.EqualityValidator;
+import com.io7m.jequality.validator.ValidatorResult;
 
 public class AlmostEqualDoubleTest
 {
-  private static final int TEST_ITERATIONS  = 1000;
+  @SuppressWarnings("static-method") @Test public void testEquality()
+  {
+    Assert.assertEquals(ValidatorResult.VALIDATION_OK, EqualityValidator
+      .validateClass(
+        AlmostEqualDouble.class,
+        AnnotationRequirement.ANNOTATIONS_REQUIRED,
+        true));
+  }
+
   private static final int TEST_GRANULARITY = 1000000;
+  private static final int TEST_ITERATIONS  = 1000;
 
   @SuppressWarnings("static-method") @Test public void testCloseRandom()
   {

@@ -16,6 +16,7 @@
 
 package com.io7m.jequality;
 
+import com.io7m.jequality.annotations.EqualityReference;
 import com.io7m.junreachable.UnreachableCodeException;
 
 /**
@@ -29,7 +30,7 @@ import com.io7m.junreachable.UnreachableCodeException;
  * </p>
  */
 
-public final class AlmostEqualDouble
+@EqualityReference public final class AlmostEqualDouble
 {
   /**
    * The necessary context for floating point comparisons.
@@ -40,27 +41,53 @@ public final class AlmostEqualDouble
     private double max_absolute_diff;
     private double max_relative_diff;
 
+    /**
+     * Construct a new equality context.
+     */
+
     public ContextRelative()
     {
       this.max_absolute_diff = 0.0;
       this.max_relative_diff = 0.0;
     }
 
+    /**
+     * @return The current maximum absolute difference
+     */
+
     public double getMaxAbsoluteDifference()
     {
       return this.max_absolute_diff;
     }
+
+    /**
+     * @return The current maximum relative difference
+     */
 
     public double getMaxRelativeDifference()
     {
       return this.max_relative_diff;
     }
 
+    /**
+     * Set the current maximum absolute difference
+     * 
+     * @param max
+     *          The required difference
+     */
+
     public void setMaxAbsoluteDifference(
       final double max)
     {
       this.max_absolute_diff = max;
     }
+
+    /**
+     * Set the current maximum relative difference
+     * 
+     * @param max
+     *          The required difference
+     */
 
     public void setMaxRelativeDifference(
       final double max)
@@ -100,6 +127,15 @@ public final class AlmostEqualDouble
    * absolute and relative epsilon values: There are no values that work well
    * for all possible inputs.
    * </p>
+   * 
+   * @param context
+   *          The equality context
+   * @param x
+   *          The left parameter
+   * @param y
+   *          The right parameter
+   * @return <code>true</code> if <code>x</code> and <code>y</code> are almost
+   *         equal
    */
 
   public static boolean almostEqual(

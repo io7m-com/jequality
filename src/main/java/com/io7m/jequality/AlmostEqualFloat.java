@@ -16,6 +16,7 @@
 
 package com.io7m.jequality;
 
+import com.io7m.jequality.annotations.EqualityReference;
 import com.io7m.junreachable.UnreachableCodeException;
 
 /**
@@ -29,7 +30,7 @@ import com.io7m.junreachable.UnreachableCodeException;
  * </p>
  */
 
-public final class AlmostEqualFloat
+@EqualityReference public final class AlmostEqualFloat
 {
   /**
    * The necessary context for floating point comparisons.
@@ -40,27 +41,53 @@ public final class AlmostEqualFloat
     private float max_absolute_diff;
     private float max_relative_diff;
 
+    /**
+     * Construct a new equality context.
+     */
+
     public ContextRelative()
     {
       this.max_absolute_diff = 0.0f;
       this.max_relative_diff = 0.0f;
     }
 
+    /**
+     * @return The current maximum absolute difference
+     */
+
     public float getMaxAbsoluteDifference()
     {
       return this.max_absolute_diff;
     }
+
+    /**
+     * @return The current maximum relative difference
+     */
 
     public float getMaxRelativeDifference()
     {
       return this.max_relative_diff;
     }
 
+    /**
+     * Set the current maximum absolute difference
+     * 
+     * @param max
+     *          The required difference
+     */
+
     public void setMaxAbsoluteDifference(
       final float max)
     {
       this.max_absolute_diff = max;
     }
+
+    /**
+     * Set the current maximum relative difference
+     * 
+     * @param max
+     *          The required difference
+     */
 
     public void setMaxRelativeDifference(
       final float max)
@@ -100,6 +127,15 @@ public final class AlmostEqualFloat
    * absolute and relative epsilon values: There are no values that work well
    * for all possible inputs.
    * </p>
+   * 
+   * @param context
+   *          The equality context
+   * @param x
+   *          The left parameter
+   * @param y
+   *          The right parameter
+   * @return <code>true</code> if <code>x</code> and <code>y</code> are almost
+   *         equal
    */
 
   public static boolean almostEqual(
