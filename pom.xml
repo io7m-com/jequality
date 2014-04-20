@@ -8,10 +8,23 @@
   <groupId>com.io7m.jequality</groupId>
   <artifactId>io7m-jequality</artifactId>
   <version>0.1.0</version>
-  <packaging>jar</packaging>
+
+  <packaging>pom</packaging>
   <name>io7m-jequality</name>
-  <description>Handling of equality in Java</description>
-  <url>http://mvn.io7m.com/jequality/</url>
+  <description>Equality handling</description>
+  <url>http://mvn.io7m.com/${project.artifactId}/</url>
+
+  <modules>
+    <module>io7m-jequality-core</module>
+    <module>io7m-jequality-documentation</module>
+  </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <siteReposDirectory>/com/io7m/jequality</siteReposDirectory>
+    <siteDocumentationDirectory>/com/io7m/jequality/io7m-jequality-documentation</siteDocumentationDirectory>
+  </properties>
 
   <licenses>
     <license>
@@ -44,7 +57,7 @@
     <site>
       <id>io7m</id>
       <name>io7m.com</name>
-      <url>http://mvn.io7m.com/jequality/</url>
+      <url>http://mvn.io7m.com/${project.artifactId}/</url>
     </site>
   </distributionManagement>
 
@@ -62,27 +75,12 @@
     <maven>2.2.1</maven>
   </prerequisites>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
       <version>4.11</version>
-    </dependency>
-    <dependency>
-      <groupId>com.io7m.jnull</groupId>
-      <artifactId>io7m-jnull</artifactId>
-      <version>[0.1.0, 1.0.0)</version>
-    </dependency>
-    <dependency>
-      <groupId>com.io7m.junreachable</groupId>
-      <artifactId>io7m-junreachable</artifactId>
-      <version>[0.1.0, 1.0.0)</version>
     </dependency>
   </dependencies>
 
@@ -100,6 +98,17 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
         <version>3.3</version>
+      </plugin>
+      <plugin>
+        <groupId>com.io7m.changelog</groupId>
+        <artifactId>io7m-changelog-plugin</artifactId>
+        <version>2.1.0</version>
+        <inherited>false</inherited>
+        <configuration>
+          <file>README-CHANGES.xml</file>
+          <feedAuthorEmail>contact@io7m.com</feedAuthorEmail>
+          <feedAuthorName>io7m release robot</feedAuthorName>
+        </configuration>
       </plugin>
     </plugins>
   </reporting>
@@ -126,157 +135,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <version>2.6</version>
-      </plugin>
-
-      <!-- Require JDK >= 1.6 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
-
-      <!-- Redirect test output -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.15</version>
-        <configuration>
-          <redirectTestOutputToFile>true</redirectTestOutputToFile>
-        </configuration>
-      </plugin>
-
-      <!-- Produce custom manifest in jar files -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.4</version>
-        <configuration>
-          <archive>
-            <manifestEntries>
-              <Specification-Title>${project.name}</Specification-Title>
-              <Specification-Version>${project.version}</Specification-Version>
-              <Specification-Vendor>io7m.com</Specification-Vendor>
-              <Implementation-Title>${project.name}</Implementation-Title>
-              <Implementation-Version>${project.version}</Implementation-Version>
-              <Implementation-Vendor>io7m.com</Implementation-Vendor>
-              <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-              <Built-By>io7m</Built-By>
-            </manifestEntries>
-            <manifestSection>
-              <name>com/io7m/jequality</name>
-              <manifestEntries>
-                <Sealed>true</Sealed>
-              </manifestEntries>
-            </manifestSection>
-          </archive>
-        </configuration>
-      </plugin>
-
-      <!-- Check style -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>2.11</version>
-        <executions>
-          <execution>
-            <id>validate</id>
-            <phase>validate</phase>
-            <configuration>
-              <configLocation>checkstyle.xml</configLocation>
-              <encoding>UTF-8</encoding>
-              <consoleOutput>true</consoleOutput>
-              <failsOnError>true</failsOnError>
-              <linkXRef>false</linkXRef>
-            </configuration>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Create source jar -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>2.2.1</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <configuration>
-              <archive>
-                <manifestEntries>
-                  <Specification-Title>${project.name}</Specification-Title>
-                  <Specification-Version>${project.version}</Specification-Version>
-                  <Specification-Vendor>io7m.com</Specification-Vendor>
-                  <Implementation-Title>${project.name}</Implementation-Title>
-                  <Implementation-Version>${project.version}</Implementation-Version>
-                  <Implementation-Vendor>io7m.com</Implementation-Vendor>
-                  <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-                  <Built-By>io7m</Built-By>
-                </manifestEntries>
-                <manifestSection>
-                  <name>com/io7m/jequality</name>
-                </manifestSection>
-              </archive>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Create javadoc jar -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.9.1</version>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <phase>package</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <configuration>
-              <archive>
-                <manifestEntries>
-                  <Specification-Title>${project.name}</Specification-Title>
-                  <Specification-Version>${project.version}</Specification-Version>
-                  <Specification-Vendor>io7m.com</Specification-Vendor>
-                  <Implementation-Title>${project.name}</Implementation-Title>
-                  <Implementation-Version>${project.version}</Implementation-Version>
-                  <Implementation-Vendor>io7m.com</Implementation-Vendor>
-                  <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-                  <Built-By>io7m</Built-By>
-                </manifestEntries>
-                <manifestSection>
-                  <name>com/io7m/jequality</name>
-                </manifestSection>
-              </archive>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Enable code coverage for unit tests -->
-      <plugin>
-        <groupId>org.sonatype.maven.plugin</groupId>
-        <artifactId>emma-maven-plugin</artifactId>
-        <version>1.2</version>
-        <executions>
-          <execution>
-            <phase>process-classes</phase>
-            <goals>
-              <goal>instrument</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
 
