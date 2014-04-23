@@ -1,1 +1,1 @@
-io7m-jequality 0.1.0
+io7m-jequality 0.3.0
