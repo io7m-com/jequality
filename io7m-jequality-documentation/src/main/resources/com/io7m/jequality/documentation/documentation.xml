@@ -275,7 +275,7 @@ public final class RefEqualityTests
         (which almost never makes logical sense). Thirdly, the
         <s:term s:type="function">equals</s:term> method must be consistent
         with the associated
-        <s:link-external s:target="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#hashCode(java.lang.Object)">hashCode</s:link-external>
+        <s:link-external s:target="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#hashCode()">hashCode</s:link-external>
         method in order for the standard library collections to behave correctly.
       </s:paragraph>
       <s:paragraph>
