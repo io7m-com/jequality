@@ -313,16 +313,14 @@ public interface Hashable<A extends Equals<A>>
           The constraint on the generic parameter of <s:term s:type="type">Hashable</s:term>
           is intended to imply that all <s:term s:type="type">Hashable</s:term>
           objects also have a defined equality relation. This could arguably
-          be removed. 
+          be removed.
         </s:footnote>.
         The invariance of generic parameters means that
         comparing objects that are of different types is statically prevented.
       </s:paragraph>
       <s:paragraph>
-        This is the approach taken by far safer languages such as 
-        <s:link-external s:target="http://haskell.org">Haskell</s:link-external>
-        and
-        <s:link-external s:target="http://ocaml.org">OCaml</s:link-external>.
+        This is the approach taken by far safer languages such as
+        <s:link-external s:target="http://haskell.org">Haskell</s:link-external>.
         Unfortunately, it is too late to fix these major design flaws in Java.
       </s:paragraph>
     </s:section>
