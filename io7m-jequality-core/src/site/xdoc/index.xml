@@ -5,12 +5,12 @@
   xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
 
   <properties>
-    <title>io7m-junreachable-core</title>
+    <title>io7m-jequality-core</title>
   </properties>
 
   <body>
-    <subsection name="junreachable-core">
-      The <var>junreachable-core</var> package contains the core types of the package.
+    <subsection name="jequality-core">
+      The <var>jequality-core</var> package contains the core types of the package.
     </subsection>
   </body>
 
