@@ -3,6 +3,17 @@
   <c:project>io7m-jequality</c:project>
 
   <c:release c:ticket-system="com.io7m.fossil.jequality">
+    <c:date>2014-07-01</c:date>
+    <c:version>1.0.1</c:version>
+    <c:item>
+      <c:date>2014-07-01</c:date>
+      <c:type-code-fix/>
+      <c:ticket>7ca0cc21f418</c:ticket>
+      <c:summary>The structural equality validator was too strong (falsely claimed subtypes did not implement structural equality).</c:summary>
+    </c:item>
+  </c:release>
+
+  <c:release c:ticket-system="com.io7m.fossil.jequality">
     <c:date>2014-06-22</c:date>
     <c:version>1.0.0</c:version>
     <c:item>

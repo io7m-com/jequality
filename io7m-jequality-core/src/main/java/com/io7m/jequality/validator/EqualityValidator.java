@@ -140,13 +140,13 @@ public final class EqualityValidator
     final Method[] ms = c.getMethods();
     for (final Method m : ms) {
       if ("equals".equals(m.getName())) {
-        if (m.getDeclaringClass() == c) {
+        if (m.getDeclaringClass() != Object.class) {
           equals_ok = true;
         }
       }
       if ("hashCode".equals(m.getName())) {
         if (check_hashcode) {
-          if (m.getDeclaringClass() == c) {
+          if (m.getDeclaringClass() != Object.class) {
             hashcode_ok = true;
           }
         }
