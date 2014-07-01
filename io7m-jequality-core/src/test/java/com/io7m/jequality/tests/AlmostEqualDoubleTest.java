@@ -27,16 +27,8 @@ import com.io7m.jequality.validator.ValidatorResult;
 
 public class AlmostEqualDoubleTest
 {
-  @SuppressWarnings("static-method") @Test public void testEquality()
-  {
-    Assert.assertEquals(ValidatorResult.VALIDATION_OK, EqualityValidator
-      .validateClass(
-        AlmostEqualDouble.class,
-        AnnotationRequirement.ANNOTATIONS_REQUIRED,
-        true));
-  }
-
   private static final int TEST_GRANULARITY = 1000000;
+
   private static final int TEST_ITERATIONS  = 1000;
 
   @SuppressWarnings("static-method") @Test public void testCloseRandom()
@@ -59,6 +51,15 @@ public class AlmostEqualDoubleTest
 
       Assert.assertTrue(AlmostEqualDouble.almostEqual(cr, r, x));
     }
+  }
+
+  @SuppressWarnings("static-method") @Test public void testEquality()
+  {
+    Assert.assertEquals(ValidatorResult.VALIDATION_OK, EqualityValidator
+      .validateClass(
+        AlmostEqualDouble.class,
+        AnnotationRequirement.ANNOTATIONS_REQUIRED,
+        true));
   }
 
   @SuppressWarnings("static-method") @Test public void testInfinities()

@@ -23,11 +23,9 @@ import com.io7m.jequality.validator.AnnotationRequirement;
 import com.io7m.jequality.validator.EqualityValidator;
 import com.io7m.jequality.validator.ValidatorResult;
 
-public final class EqualityValidatorTest
+@SuppressWarnings("static-method") public final class EqualityValidatorTest
 {
-  @SuppressWarnings("static-method") @Test public
-    void
-    testReferenceEquality()
+  @Test public void testReferenceEquality()
   {
     Assert.assertEquals(ValidatorResult.VALIDATION_OK, EqualityValidator
       .validateClass(
@@ -36,9 +34,7 @@ public final class EqualityValidatorTest
         true));
   }
 
-  @SuppressWarnings("static-method") @Test public
-    void
-    testReferenceEqualityHashCode()
+  @Test public void testReferenceEqualityHashCode()
   {
     Assert.assertEquals(
       ValidatorResult.VALIDATION_ERROR_INCONSISTENT_HASHCODE,
@@ -48,9 +44,7 @@ public final class EqualityValidatorTest
         true));
   }
 
-  @SuppressWarnings("static-method") @Test public
-    void
-    testReferenceEqualityHashCodeIgnored()
+  @Test public void testReferenceEqualityHashCodeIgnored()
   {
     Assert.assertEquals(ValidatorResult.VALIDATION_OK, EqualityValidator
       .validateClass(
@@ -59,9 +53,7 @@ public final class EqualityValidatorTest
         false));
   }
 
-  @SuppressWarnings("static-method") @Test public
-    void
-    testReferenceEqualityNot()
+  @Test public void testReferenceEqualityNot()
   {
     Assert.assertEquals(
       ValidatorResult.VALIDATION_ERROR_WANTED_REFERENCE_EQUALITY,
@@ -71,9 +63,26 @@ public final class EqualityValidatorTest
         true));
   }
 
-  @SuppressWarnings("static-method") @Test public
-    void
-    testStructuralEquality()
+  @Test public void testReferenceEqualitySubCorrect()
+  {
+    Assert.assertEquals(ValidatorResult.VALIDATION_OK, EqualityValidator
+      .validateClass(
+        RefEqualitySubCorrect.class,
+        AnnotationRequirement.ANNOTATIONS_REQUIRED,
+        true));
+  }
+
+  @Test public void testReferenceEqualitySubIncorrect()
+  {
+    Assert.assertEquals(
+      ValidatorResult.VALIDATION_ERROR_WANTED_STRUCTURAL_EQUALITY,
+      EqualityValidator.validateClass(
+        RefEqualitySubIncorrect.class,
+        AnnotationRequirement.ANNOTATIONS_REQUIRED,
+        true));
+  }
+
+  @Test public void testStructuralEquality()
   {
     Assert.assertEquals(ValidatorResult.VALIDATION_OK, EqualityValidator
       .validateClass(
@@ -82,9 +91,7 @@ public final class EqualityValidatorTest
         true));
   }
 
-  @SuppressWarnings("static-method") @Test public
-    void
-    testStructuralEqualityHashCode()
+  @Test public void testStructuralEqualityHashCode()
   {
     Assert.assertEquals(
       ValidatorResult.VALIDATION_ERROR_INCONSISTENT_HASHCODE,
@@ -94,9 +101,7 @@ public final class EqualityValidatorTest
         true));
   }
 
-  @SuppressWarnings("static-method") @Test public
-    void
-    testStructuralEqualityHashCodeIgnored()
+  @Test public void testStructuralEqualityHashCodeIgnored()
   {
     Assert.assertEquals(ValidatorResult.VALIDATION_OK, EqualityValidator
       .validateClass(
@@ -105,9 +110,7 @@ public final class EqualityValidatorTest
         false));
   }
 
-  @SuppressWarnings("static-method") @Test public
-    void
-    testStructuralEqualityNot()
+  @Test public void testStructuralEqualityNot()
   {
     Assert.assertEquals(
       ValidatorResult.VALIDATION_ERROR_WANTED_STRUCTURAL_EQUALITY,
@@ -117,7 +120,16 @@ public final class EqualityValidatorTest
         true));
   }
 
-  @SuppressWarnings("static-method") @Test public void testUnannotated()
+  @Test public void testStructuralEqualitySuper()
+  {
+    Assert.assertEquals(ValidatorResult.VALIDATION_OK, EqualityValidator
+      .validateClass(
+        StructuralEqualitySuper.class,
+        AnnotationRequirement.ANNOTATIONS_REQUIRED,
+        true));
+  }
+
+  @Test public void testUnannotated()
   {
     Assert.assertEquals(ValidatorResult.VALIDATION_OK, EqualityValidator
       .validateClass(
@@ -126,7 +138,7 @@ public final class EqualityValidatorTest
         true));
   }
 
-  @SuppressWarnings("static-method") @Test public void testUnannotatedWrong()
+  @Test public void testUnannotatedWrong()
   {
     Assert.assertEquals(
       ValidatorResult.VALIDATION_ERROR_WANTED_ANNOTATIONS,
