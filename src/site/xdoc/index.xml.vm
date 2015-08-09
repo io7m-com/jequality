@@ -14,6 +14,14 @@
       functions, types, and annotations for dealing with equality
       in Java.</p>
     </subsection>
+    <subsection name="Features">
+      <ul>
+        <li>Functions for performing approximate comparisons of floating point values.</li>
+        <li>Annotations for indicating what type of equality a class uses, with a validator to check correctness.</li>
+        <li>Full unit test coverage.</li>
+        <li>ISC license.</li>
+      </ul>
+    </subsection>
   </body>
 
 </document>
