@@ -5,12 +5,14 @@
   xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
 
   <properties>
-    <title>Reports</title>
+    <title>io7m-jequality</title>
   </properties>
 
   <body>
-    <subsection name="Reports">
-      No reports are currently available.
+    <subsection name="jequality">
+      <p>The <var>jequality</var> package implements a set of
+      functions, types, and annotations for dealing with equality
+      in Java.</p>
     </subsection>
   </body>
 
