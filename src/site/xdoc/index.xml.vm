@@ -19,6 +19,7 @@
         <li>Functions for performing approximate comparisons of floating point values.</li>
         <li>Annotations for indicating what type of equality a class uses, with a validator to check correctness.</li>
         <li>Full unit test coverage.</li>
+        <li><a href="https://www.osgi.org/">OSGi</a>-ready.</li>
         <li>ISC license.</li>
       </ul>
     </subsection>

@@ -104,25 +104,25 @@ public final class EqualityValidator
     final Method[] ms = c.getMethods();
     for (final Method m : ms) {
       if ("equals".equals(m.getName())) {
-        if (m.getDeclaringClass() == Object.class) {
+        if (m.getDeclaringClass().equals(Object.class)) {
           equals_ok = true;
         }
       }
       if ("hashCode".equals(m.getName())) {
         if (check_hashcode) {
-          if (m.getDeclaringClass() == Object.class) {
+          if (m.getDeclaringClass().equals(Object.class)) {
             hashcode_ok = true;
           }
         }
       }
     }
 
-    if (equals_ok == false) {
+    if (!equals_ok) {
       return ValidatorResult.VALIDATION_ERROR_WANTED_REFERENCE_EQUALITY;
     }
 
     if (check_hashcode) {
-      if (hashcode_ok == false) {
+      if (!hashcode_ok) {
         return ValidatorResult.VALIDATION_ERROR_INCONSISTENT_HASHCODE;
       }
     }
@@ -140,25 +140,25 @@ public final class EqualityValidator
     final Method[] ms = c.getMethods();
     for (final Method m : ms) {
       if ("equals".equals(m.getName())) {
-        if (m.getDeclaringClass() != Object.class) {
+        if (!m.getDeclaringClass().equals(Object.class)) {
           equals_ok = true;
         }
       }
       if ("hashCode".equals(m.getName())) {
         if (check_hashcode) {
-          if (m.getDeclaringClass() != Object.class) {
+          if (!m.getDeclaringClass().equals(Object.class)) {
             hashcode_ok = true;
           }
         }
       }
     }
 
-    if (equals_ok == false) {
+    if (!equals_ok) {
       return ValidatorResult.VALIDATION_ERROR_WANTED_STRUCTURAL_EQUALITY;
     }
 
     if (check_hashcode) {
-      if (hashcode_ok == false) {
+      if (!hashcode_ok) {
         return ValidatorResult.VALIDATION_ERROR_INCONSISTENT_HASHCODE;
       }
     }
