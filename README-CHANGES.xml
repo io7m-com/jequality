@@ -4,6 +4,16 @@
 
   <c:release c:ticket-system="com.github.io7m.jequality">
     <c:date>2016-08-03</c:date>
+    <c:version>1.0.4</c:version>
+    <c:item>
+      <c:date>2016-08-03</c:date>
+      <c:type-code-fix/>
+      <c:summary>Correct OSGi exports.</c:summary>
+    </c:item>
+  </c:release>
+
+  <c:release c:ticket-system="com.github.io7m.jequality">
+    <c:date>2016-08-03</c:date>
     <c:version>1.0.3</c:version>
     <c:item>
       <c:date>2016-08-03</c:date>

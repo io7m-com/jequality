@@ -8,7 +8,7 @@
   <parent>
     <groupId>com.io7m.jequality</groupId>
     <artifactId>io7m-jequality</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
   </parent>
   <artifactId>io7m-jequality-core</artifactId>
 
@@ -56,7 +56,11 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Export-Package>com.io7m.jequality</Export-Package>
+            <Export-Package>
+              com.io7m.jequality,
+              com.io7m.jequality.annotations,
+              com.io7m.jequality.validator
+            </Export-Package>
           </instructions>
         </configuration>
       </plugin>
