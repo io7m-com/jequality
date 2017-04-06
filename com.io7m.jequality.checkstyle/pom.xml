@@ -7,15 +7,19 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.io7m.jequality</groupId>
-    <artifactId>io7m-jequality</artifactId>
+    <artifactId>com.io7m.jequality</artifactId>
     <version>1.0.4</version>
   </parent>
-  <artifactId>io7m-jequality-checkstyle</artifactId>
+  <artifactId>com.io7m.jequality.checkstyle</artifactId>
 
   <packaging>jar</packaging>
-  <name>io7m-jequality-checkstyle</name>
+  <name>com.io7m.jequality.checkstyle</name>
   <description>~Equality handling (Checkstyle policy)</description>
   <url>http://io7m.github.io/jequality/</url>
+
+  <properties>
+    <io7m.api.previousArtifactId>io7m-jequality-checkstyle</io7m.api.previousArtifactId>
+  </properties>
 
   <scm>
     <url>${project.parent.scm.url}</url>
