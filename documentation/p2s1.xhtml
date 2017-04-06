@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>io7m-jequality 1.0.4 Documentation: 2.1. Annotations</title><link rel="stylesheet" type="text/css" href="jstructural-2.0.0-layout.css"/><link rel="stylesheet" type="text/css" href="jstructural-2.0.0-colour.css"/><link rel="stylesheet" type="text/css" href="documentation.css"/></head><body><div class="st200_body"><div class="brand">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>com.io7m.jequality 1.0.5 Documentation: 2.1. Annotations</title><link rel="stylesheet" type="text/css" href="jstructural-2.0.0-layout.css"/><link rel="stylesheet" type="text/css" href="jstructural-2.0.0-colour.css"/><link rel="stylesheet" type="text/css" href="documentation.css"/></head><body><div class="st200_body"><div class="brand">
   <div class="brand_left">
     <a href="http://io7m.com/">io7m</a>
   </div>
   <div class="brand_right">
-    <a href="http://github.com/io7m/jequality">io7m-jequality</a> 1.0.4
+    <a href="http://github.com/io7m/jequality">com.io7m.jequality</a> 1.0.5
   </div>
 </div><div class="st200_navbar st200_navbar_top"><table class="st200_navbar_table" summary="Navigation bar"><tr><td class="st200_navbar_prev_title_cell">2. Usage</td><td class="st200_navbar_up_title_cell">2. Usage</td><td class="st200_navbar_next_title_cell">2.2. Complaints</td></tr><tr><td class="st200_navbar_prev_file_cell"><a href="p2.xhtml#st200_p2">Previous</a></td><td class="st200_navbar_up_file_cell"><a href="p2.xhtml#st200_p2">Up</a></td><td class="st200_navbar_next_file_cell"><a href="p2s2.xhtml#st200_p2s2">Next</a></td></tr></table><hr class="st200_hr"/></div><div class="st200_section_container"><div class="st200_section_title_number"><a id="st200_p2s1" href="#st200_p2s1">2.1</a></div><div class="st200_section_title">Annotations</div><div class="st200_subsection_container"><div class="st200_subsection_title_number"><a id="st200_p2s1ss1" href="#st200_p2s1ss1">2.1.1</a></div><div class="st200_subsection_title">Overview</div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p2s1ss1pg1" href="#st200_p2s1ss1pg1">1</a></div><div class="st200_paragraph">
           In Java, if a class does not override the 
@@ -19,7 +19,7 @@
           <span class="st200_term function">equals</span> method, leading to extremely
           subtle and dangerous bugs.
         </div></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p2s1ss1pg2" href="#st200_p2s1ss1pg2">2</a></div><div class="st200_paragraph">
-          The <span class="st200_term package">io7m-jequality</span> package
+          The <span class="st200_term package">com.io7m.jequality</span> package
           provides a set of annotations and a validator to check that classes
           conform to their annotations. Essentially, the programmer annotates a
           class with an annotation that states that the class is expected to
@@ -38,7 +38,7 @@
           Solving this problem is undecidable in general.
         </div></div></div><div class="st200_subsection_container"><div class="st200_subsection_title_number"><a id="st200_p2s1ss2" href="#st200_p2s1ss2">2.1.2</a></div><div class="st200_subsection_title">Validation</div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p2s1ss2pg1" href="#st200_p2s1ss2pg1">1</a></div><div class="st200_paragraph">
           Validation of classes is expected to occur in the test suite of
-          the project using the <span class="st200_term package">io7m-jequality</span> package.
+          the project using the <span class="st200_term package">com.io7m.jequality</span> package.
         </div></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p2s1ss2pg2" href="#st200_p2s1ss2pg2">2</a></div><div class="st200_paragraph">
           As an example:
         </div></div><div class="st200_formal_item"><div class="st200_formal_item_title"><a id="st200_p2s1ss2fo1" href="#st200_p2s1ss2fo1">2.1.2.1. Validation (RefEquality)</a></div><pre class="st200_verbatim">@EqualityReference public final class RefEquality
