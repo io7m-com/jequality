@@ -7,15 +7,20 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.io7m.jequality</groupId>
-    <artifactId>io7m-jequality</artifactId>
-    <version>1.0.4</version>
+    <artifactId>com.io7m.jequality</artifactId>
+    <version>1.0.5</version>
   </parent>
-  <artifactId>io7m-jequality-documentation</artifactId>
+  <artifactId>com.io7m.jequality.documentation</artifactId>
 
   <packaging>jar</packaging>
-  <name>io7m-jequality-documentation</name>
+  <name>com.io7m.jequality.documentation</name>
   <description>Equality handling (Documentation)</description>
   <url>http://io7m.github.io/jequality/</url>
+
+  <properties>
+    <io7m.api.previousArtifactId>io7m-jequality-documentation</io7m.api.previousArtifactId>
+    <mdep.analyze.skip>true</mdep.analyze.skip>
+  </properties>
 
   <scm>
     <url>${project.parent.scm.url}</url>
@@ -26,8 +31,13 @@
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>io7m-jequality-core</artifactId>
+      <artifactId>com.io7m.jequality.core</artifactId>
       <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.io7m.jnull</groupId>
+      <artifactId>com.io7m.jnull.core</artifactId>
     </dependency>
   </dependencies>
 
