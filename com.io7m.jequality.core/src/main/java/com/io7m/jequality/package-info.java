@@ -14,7 +14,9 @@
  * IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-@NonNullByDefault package com.io7m.jequality;
+/**
+ * Equality handling.
+ */
 
-import com.io7m.jnull.NonNullByDefault;
+package com.io7m.jequality;
 

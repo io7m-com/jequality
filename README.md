@@ -1,11 +1,10 @@
 jequality
 =========
 
-[![Build Status](https://travis-ci.org/io7m/jequality.svg?branch=master)](https://travis-ci.org/io7m/jequality)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.io7m.jequality/com.io7m.jequality/badge.png)](https://maven-badges.herokuapp.com/maven-central/com.io7m.jequality/com.io7m.jequality)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0986dbfb63924ddcbfa19fcc35986e81)](https://www.codacy.com/app/github_79/jequality?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=io7m/jequality&amp;utm_campaign=Badge_Grade)
-
-See https://io7m.github.io/jequality/ for more information.
+[![Travis](https://img.shields.io/travis/io7m/jequality.svg?style=flat-square)](https://travis-ci.org/io7m/jequality)
+[![Maven Central](https://img.shields.io/maven-central/v/com.io7m.jequality/com.io7m.jequality.svg?style=flat-square)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.io7m.jequality%22)
+[![Codacy grade](https://img.shields.io/codacy/grade/0986dbfb63924ddcbfa19fcc35986e81.svg?style=flat-square)](https://www.codacy.com/app/github_79/jequality)
+[![Codecov](https://img.shields.io/codecov/c/github/io7m/jequality.svg?style=flat-square)](https://codecov.io/gh/io7m/jequality)
 
 ![jequality](./src/site/resources/jequality.jpg?raw=true)
 
