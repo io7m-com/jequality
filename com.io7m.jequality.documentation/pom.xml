@@ -94,6 +94,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <executions>
+
           <!-- Produce javadoc jar for Central -->
           <execution>
             <id>attach-javadocs</id>
@@ -117,6 +118,7 @@
               </archive>
             </configuration>
           </execution>
+
           <!-- Produce aggregate dependency javadocs -->
           <execution>
             <id>javadoc-aggregate</id>
