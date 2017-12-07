@@ -23,16 +23,16 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * <p>
- * An annotation that, when applied to a given class, implies that the class
- * uses structural equality. That is, for a given type <code>C</code> with the
- * set of fields <code>F</code>,
- * <code>∀x y. x : C ∧ y : C → (∀f. f ∈ F → (x.f.equals(y.f) ↔ x.equals(y)))</code>
- * .
- * </p>
+ * <p> An annotation that, when applied to a given class, implies that the class
+ * uses structural equality. That is, for a given type {@code C} with the set of
+ * fields {@code F}, {@code ∀x y. x : C ∧ y : C → (∀f. f ∈ F → (x.f.equals(y.f)
+ * ↔ x.equals(y)))} . </p>
  */
 
-@Documented @Target({ ElementType.TYPE }) @Retention(RetentionPolicy.RUNTIME) public @interface EqualityStructural
+@Documented
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface EqualityStructural
 {
   // Nothing.
 }

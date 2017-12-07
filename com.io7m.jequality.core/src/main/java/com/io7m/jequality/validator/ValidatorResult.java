@@ -23,9 +23,8 @@ package com.io7m.jequality.validator;
 public enum ValidatorResult
 {
   /**
-   * Validation failed; <code>hashCode</code> checking was requested, but the
-   * <code>hashCode</code> method was not defined in the same class as
-   * <code>equals</code>.
+   * Validation failed; {@code hashCode} checking was requested, but the {@code
+   * hashCode} method was not defined in the same class as {@code equals}.
    */
 
   VALIDATION_ERROR_INCONSISTENT_HASHCODE,
@@ -38,14 +37,14 @@ public enum ValidatorResult
 
   /**
    * Validation failed; the class specified reference equality but actually
-   * overrode <code>equals</code>.
+   * overrode {@code equals}.
    */
 
   VALIDATION_ERROR_WANTED_REFERENCE_EQUALITY,
 
   /**
    * Validation failed; the class specified structural equality but failed to
-   * override <code>equals</code>.
+   * override {@code equals}.
    */
 
   VALIDATION_ERROR_WANTED_STRUCTURAL_EQUALITY,

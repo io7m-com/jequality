@@ -23,14 +23,15 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * <p>
- * An annotation that, when applied to a given class, implies that the class
- * uses reference equality. That is, for a given type <code>C</code>,
- * <code>∀x y. x &lt;: C ∧ y &lt;: C → (x == y ↔ x.equals(y))</code>.
- * </p>
+ * <p> An annotation that, when applied to a given class, implies that the class
+ * uses reference equality. That is, for a given type {@code C}, {@code ∀x y. x
+ * <: C ∧ y <: C → (x == y ↔ x.equals(y))}. </p>
  */
 
-@Documented @Target({ ElementType.TYPE }) @Retention(RetentionPolicy.RUNTIME) public @interface EqualityReference
+@Documented
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface EqualityReference
 {
   // Nothing.
 }

@@ -20,7 +20,7 @@ import java.lang.reflect.Method;
 
 import com.io7m.jequality.annotations.EqualityReference;
 import com.io7m.jequality.annotations.EqualityStructural;
-import com.io7m.jnull.NullCheck;
+import java.util.Objects;
 import com.io7m.junreachable.UnreachableCodeException;
 
 /**
@@ -70,8 +70,8 @@ public final class EqualityValidator
     final AnnotationRequirement requirement,
     final boolean check_hashcode)
   {
-    NullCheck.notNull(c, "Class");
-    NullCheck.notNull(requirement, "Requirement");
+    Objects.requireNonNull(c, "Class");
+    Objects.requireNonNull(requirement, "Requirement");
 
     final EqualityReference er = c.getAnnotation(EqualityReference.class);
     if (er != null) {

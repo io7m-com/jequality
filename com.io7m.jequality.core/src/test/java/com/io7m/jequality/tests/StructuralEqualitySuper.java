@@ -17,12 +17,11 @@
 package com.io7m.jequality.tests;
 
 import com.io7m.jequality.annotations.EqualityStructural;
-import com.io7m.jnull.Nullable;
 
 @EqualityStructural public class StructuralEqualitySuper
 {
   @Override public boolean equals(
-    final @Nullable Object other)
+    final Object other)
   {
     return false;
   }
