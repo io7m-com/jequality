@@ -1,0 +1,1 @@
+packageSearchIndex = [{"m":"com.io7m.jequality.core","l":"com.io7m.jequality"},{"m":"com.io7m.jequality.core","l":"com.io7m.jequality.annotations"},{"m":"com.io7m.jequality.documentation","l":"com.io7m.jequality.documentation"},{"m":"com.io7m.jequality.core","l":"com.io7m.jequality.validator"}]

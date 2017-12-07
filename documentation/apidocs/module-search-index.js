@@ -1,0 +1,1 @@
+moduleSearchIndex = [{"l":"com.io7m.jequality.core"},{"l":"com.io7m.jequality.documentation"}]

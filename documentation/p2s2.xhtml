@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>com.io7m.jequality 2.0.0 Documentation: 2.2. Complaints</title><link rel="stylesheet" type="text/css" href="jstructural-2.0.0-layout.css"/><link rel="stylesheet" type="text/css" href="jstructural-2.0.0-colour.css"/><link rel="stylesheet" type="text/css" href="documentation.css"/></head><body><div class="st200_body"><div class="brand">
+  <div class="brand_left">
+    <a href="http://io7m.com/">io7m</a>
+  </div>
+  <div class="brand_right">
+    <a href="http://github.com/io7m/jequality">com.io7m.jequality</a> 2.0.0
+  </div>
+</div><div class="st200_navbar st200_navbar_top"><table class="st200_navbar_table" summary="Navigation bar"><tr><td class="st200_navbar_prev_title_cell">2.1. Annotations</td><td class="st200_navbar_up_title_cell">2. Usage</td><td class="st200_navbar_next_title_cell">2.3. Floating point</td></tr><tr><td class="st200_navbar_prev_file_cell"><a href="p2s1.xhtml#st200_p2s1">Previous</a></td><td class="st200_navbar_up_file_cell"><a href="p2.xhtml#st200_p2">Up</a></td><td class="st200_navbar_next_file_cell"><a href="p2s3.xhtml#st200_p2s3">Next</a></td></tr></table><hr class="st200_hr"/></div><div class="st200_section_container"><div class="st200_section_title_number"><a id="st200_p2s2" href="#st200_p2s2">2.2</a></div><div class="st200_section_title">Complaints</div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p2s2pg1" href="#st200_p2s2pg1">1</a></div><div class="st200_paragraph">
+        Handling of equality in Java is usually considered to be one of the
+        worst design mistakes of the language. The problems are manifold. Firstly,
+        the <span class="st200_term function">equals</span> method is defined on the
+        <span class="st200_term type">java.lang.Object</span>
+        type from which all Java classes are forced to inherit. This means that
+        equality <span class="st200_term term">must</span> be defined for all types,
+        even those that do not have sensible equality relations
+        <span class="st200_footnote_reference"><a id="st200_fn_1_ref" href="#st200_fn_1">[1]</a></span>. If an object forgets to override <span class="st200_term function">equals</span>,
+        then the object is given reference equality by default.
+        Secondly, the argument to the
+        <span class="st200_term function">equals</span> method is of type
+        <span class="st200_term type">java.lang.Object</span>, meaning that it's
+        perfectly possible to query the equality of values of different types
+        (which almost never makes logical sense). Thirdly, the
+        <span class="st200_term function">equals</span> method must be consistent
+        with the associated
+        <a class="st200_link_external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#hashCode()">hashCode</a>
+        method in order for the standard library collections to behave correctly.
+      </div></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p2s2pg2" href="#st200_p2s2pg2">2</a></div><div class="st200_paragraph">
+        Had Java been designed today, the correct way to design
+        <span class="st200_term function">equals</span>, assuming that
+        <span class="st200_term type">java.lang.Object</span> still existed,
+        would be for <span class="st200_term type">java.lang.Object</span>
+        to declare neither <span class="st200_term function">equals</span>
+        nor <span class="st200_term function">hashCode</span>. A static
+        method <span class="st200_term function">same</span> would be defined
+        in <span class="st200_term type">java.lang.Object</span> in order
+        to compare the addresses of two values. The following interface
+        types would be provided by the standard library:
+      </div></div><div class="st200_formal_item"><div class="st200_formal_item_title"><a id="st200_p2s2fo1" href="#st200_p2s2fo1">2.2.1. Interfaces</a></div><pre class="st200_verbatim">public interface Equals&lt;A&gt;
+{
+  boolean equals(A x);
+}
+
+public interface Hashable&lt;A extends Equals&lt;A&gt;&gt;
+{
+  int hashCode();
+}</pre></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p2s2pg3" href="#st200_p2s2pg3">3</a></div><div class="st200_paragraph">
+        Effectively, equality is only defined for objects that
+        explicitly implement <span class="st200_term type">Equals</span>. The
+        <span class="st200_term type">Equals</span> type implies structural
+        equality.
+        Objects can only be placed into collections that require
+        hashing if they explicitly implement <span class="st200_term type">Hashable</span>
+        <span class="st200_footnote_reference"><a id="st200_fn_2_ref" href="#st200_fn_2">[2]</a></span>.
+        The invariance of generic parameters means that
+        comparing objects that are of different types is statically prevented.
+      </div></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p2s2pg4" href="#st200_p2s2pg4">4</a></div><div class="st200_paragraph">
+        This is the approach taken by far safer languages such as
+        <a class="st200_link_external" href="http://haskell.org">Haskell</a>.
+        Unfortunately, it is too late to fix these major design flaws in Java.
+      </div></div></div><div class="st200_footnotes"><hr/><div class="st200_footnote_container"><div class="st200_footnote_number">[<a id="st200_fn_1" href="#st200_fn_1_ref">1</a>]</div><div class="st200_footnote_body">
+          Consider the required equality relation for function types.
+        </div></div><div class="st200_footnote_container"><div class="st200_footnote_number">[<a id="st200_fn_2" href="#st200_fn_2_ref">2</a>]</div><div class="st200_footnote_body">
+          The constraint on the generic parameter of <span class="st200_term type">Hashable</span>
+          is intended to imply that all <span class="st200_term type">Hashable</span>
+          objects also have a defined equality relation. This could arguably
+          be removed.
+        </div></div></div><div class="st200_navbar st200_navbar_bottom"><hr class="st200_hr"/><table class="st200_navbar_table" summary="Navigation bar"><tr><td class="st200_navbar_prev_file_cell"><a href="p2s1.xhtml#st200_p2s1">Previous</a></td><td class="st200_navbar_up_file_cell"><a href="p2.xhtml#st200_p2">Up</a></td><td class="st200_navbar_next_file_cell"><a href="p2s3.xhtml#st200_p2s3">Next</a></td></tr><tr><td class="st200_navbar_prev_title_cell">2.1. Annotations</td><td class="st200_navbar_up_title_cell">2. Usage</td><td class="st200_navbar_next_title_cell">2.3. Floating point</td></tr></table></div></div></body></html>
