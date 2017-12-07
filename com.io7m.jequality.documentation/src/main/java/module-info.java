@@ -14,7 +14,13 @@
  * IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+/**
+ * Documentation.
+ */
+
 module com.io7m.jequality.documentation
 {
+  requires com.io7m.jequality.core;
 
+  exports com.io7m.jequality.documentation;
 }

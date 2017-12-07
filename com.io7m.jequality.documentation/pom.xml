@@ -134,9 +134,6 @@
               <dependencySourceIncludes>
                 <dependencySourceSet>com.io7m.jequality*</dependencySourceSet>
               </dependencySourceIncludes>
-              <sourceFileExcludes>
-                <sourceFileExclude>**/module-info.java</sourceFileExclude>
-              </sourceFileExcludes>
             </configuration>
           </execution>
         </executions>
