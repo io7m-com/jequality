@@ -26,6 +26,11 @@ import java.net.URL;
 
 public final class EDocumentation
 {
+  private EDocumentation()
+  {
+
+  }
+
   public static URI getDocumentationXMLLocation()
   {
     try {
