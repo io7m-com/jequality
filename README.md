@@ -1,5 +1,5 @@
 jequality
-=========
+===
 
 [![Travis](https://img.shields.io/travis/io7m/jequality.png?style=flat-square)](https://travis-ci.org/io7m/jequality)
 [![Maven Central](https://img.shields.io/maven-central/v/com.io7m.jequality/com.io7m.jequality.png?style=flat-square)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.io7m.jequality%22)
