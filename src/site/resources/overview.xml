@@ -8,10 +8,6 @@
          <img src="https://img.shields.io/maven-central/v/com.io7m.jequality/com.io7m.jequality.png?style=flat-square"
               alt="Maven Central"/>
       </a>
-      <a href="https://www.codacy.com/app/github_79/jequality">
-         <img src="https://img.shields.io/codacy/grade/0986dbfb63924ddcbfa19fcc35986e81.png?style=flat-square"
-              alt="Codacy"/>
-      </a>
       <a href="https://codecov.io/gh/io7m/jequality">
          <img src="https://img.shields.io/codecov/c/github/io7m/jequality.png?style=flat-square"
               alt="Codecov"/>
