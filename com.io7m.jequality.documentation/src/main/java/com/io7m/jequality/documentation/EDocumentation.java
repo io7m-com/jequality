@@ -31,6 +31,10 @@ public final class EDocumentation
 
   }
 
+  /**
+   * @return The documentation URI
+   */
+
   public static URI getDocumentationXMLLocation()
   {
     try {
