@@ -20,9 +20,11 @@
   <modules>
     <module>com.io7m.jequality.core</module>
     <module>com.io7m.jequality.documentation</module>
+    <module>com.io7m.jequality.tests</module>
   </modules>
 
   <properties>
+    <!-- Configuration. -->
     <io7m.api.previousVersion>3.0.0</io7m.api.previousVersion>
     <io7m.java.targetJavaVersion>21</io7m.java.targetJavaVersion>
   </properties>
@@ -35,9 +37,9 @@
   </licenses>
 
   <scm>
-    <url>https://github.com/io7m/jequality</url>
-    <connection>scm:git:https://github.com/io7m/jequality</connection>
-    <developerConnection>scm:git:https://github.com/io7m/jequality</developerConnection>
+    <url>https://www.github.com/io7m-com/jequality</url>
+    <connection>scm:git:https://www.github.com/io7m-com/jequality</connection>
+    <developerConnection>scm:git:https://www.github.com/io7m-com/jequality</developerConnection>
   </scm>
 
   <developers>
@@ -50,7 +52,7 @@
   </developers>
 
   <issueManagement>
-    <url>https://github.com/io7m/jequality/issues</url>
+    <url>https://www.github.com/io7m-com/jequality/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
 
@@ -68,7 +70,7 @@
 
   <ciManagement>
     <system>GitHub Actions</system>
-    <url>https://github.com/jequality/actions</url>
+    <url>https://www.github.com/io7m-com/jequality/actions</url>
   </ciManagement>
 
   <prerequisites>
