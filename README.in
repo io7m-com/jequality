@@ -1,0 +1,33 @@
+
+## jequality
+
+The `jequality` package provides functions to compare floating-point numbers,
+annotations to mark classes as using specific types of equality, and a validator
+for equality methods.
+
+## Status
+
+As the Java platform evolves, libraries that may have been necessary in the
+past can become unnecessary due to new platform features. If you were already
+using `jequality`, then you know what it does and why you were using it. If
+you aren't already using `jequality`, then you should not start.
+
+This package is in maintenance mode and will not see any new functionality.
+
+Use [equalsverifier](https://jqno.nl/equalsverifier/) as a replacement for
+the `jequality` validator.
+
+Use JDK 17 record types to eliminate a lot of the issues with `equals()` and
+`hashCode()`.
+
+Use JUnit 5 assertions to perform approximate equality checks of floating-point
+values in unit tests. Outside of unit tests, find some other way to compare
+numbers.
+
+## Features
+
+* High coverage test suite.
+* Written in pure Java 21.
+* [OSGi-ready](https://www.osgi.org/)
+* [JPMS-ready](https://en.wikipedia.org/wiki/Java_Platform_Module_System)
+* ISC license.
